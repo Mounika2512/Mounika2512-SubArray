@@ -1,4 +1,3 @@
-
 public class SubArray {
     /**
      * Return only a part of an array. For instance, given the array {1,2,3,4,5}, a sub array with start 1 and end 4
@@ -13,6 +12,13 @@ public class SubArray {
      * @return a sub-array of nums containing the values between start and end.
      */
     public int[] sub(int[] nums, int start, int end){
-        return null;
+      if (start < 0 || end > nums.length || start >= end) {
+        return new int[0];
     }
+    int[] subArray = new int[end - start];
+    for (int i = start; i < end; i++) {
+        subArray[i - start] = nums[i];
+    }
+    return subArray;
+}
 }
